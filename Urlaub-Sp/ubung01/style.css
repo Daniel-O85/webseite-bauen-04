@@ -1,0 +1,255 @@
+/* * * * * * * * * * * * * * * * * *
+ * Hintergrund der Seite.
+ * * * * * * * * * * * * * * * * * *
+ * 1. Eine Hintergrundbild deiner Wahl
+ * 2. Das Bild soll beim Scrollen sich 
+ *    nicht bewegen (fixed)
+ * 3. Das Bild soll den gesamten
+ *    Sichtfeld füllen (cover)
+ * 4. Das Bild soll mittig sein (center)
+ * 5. Das Bild soll die gesamte
+      Höhe des Sichtfeldes berücksichtigen
+      (100vh)
+ * * * * * * * * * * * * * * * * * */
+
+body {
+  background-image: url(../bilder/spanienback.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+/* * * * * * * * * * * * * * * * * *
+ * Menüleiste (FLEX)
+ * * * * * * * * * * * * * * * * * */
+
+/* Hintergrundfarbe */
+/*header table {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    border: inset 3px rgb(0, 102, 255);
+    padding: 10px;
+}*/
+
+/* Die Ziffern mit ...style-type:none;
+    entfernen. Der Inhalt soll mittig
+    fließen und wenn nicht genug
+    Platz vorhanden ist, auf die nächste
+    Zeile brechen. */
+header ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  font-size: 40px;
+  border: inset 3px darkred;
+  padding: 10px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 0, 0.578) 20%,
+    rgba(255, 0, 0, 0.5) 80%
+  );
+}
+
+/* Innerer Randabstand von 10px;
+  * Text in der Mitte */
+header ol li {
+  padding: 10px;
+}
+
+/* Andere Hintergrundfarbe und
+  * Textfarbe */
+header ol li:hover {
+  background-image: linear-gradient(
+    180deg,
+    rgb(197, 6, 6) 5%,
+    rgba(255, 255, 0, 0.781) 50%,
+    rgb(197, 6, 6) 95%
+  );
+}
+
+/* Textfarbe und den Unterstrich
+  * mit ...oration-line: none; 
+  * entfernen */
+header ol li a {
+  color: darkred;
+  text-decoration-line: none;
+}
+
+/* * * * * * * * * * * * * * * * * *
+ * Fußzeile (FLEX)
+ * * * * * * * * * * * * * * * * * */
+
+/* Die Fußzeile soll immer sichtbar
+  * bleiben und ganz unten liegen 
+  * (p...:fixed; b...m: 0; l...:0px;w...:100%;).
+  * Es hat eine Hintergrundfarbe.
+  * Der Inhalt soll gestreckt fließen und
+  * wenn nicht genug Platz vorhanden ist,
+  * auf die nächste Zeile brechen.
+  * Die Schriftgröße ist klein (10px)
+  * und die Zeilenhöhe ist auch klein
+  * (16px) */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 15px;
+  line-height: 20px;
+  background-color: rgba(135, 8, 8, 0.886);
+  position: fixed;
+  bottom: 0;
+  left: 1px;
+  width: 100%;
+}
+
+/* GRID mit zwei Spalten, beide
+  * Spalten sind gleich breit
+  * (Die Breite des Sichtfeldes ist
+  *  immer 100%) */
+footer .nebeneinander {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 95%;
+}
+
+/* Die Bilder sollen von rechts nach
+ * links fließen und wenn nicht 
+ * genug Platz vorhanden ist, auf
+ * die nächste Zeile brechen */
+footer .logos {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Das Bild soll eine Breite und eine
+ * Höhe von 32px haben */
+footer .logos img {
+  width: 32px;
+  height: 32px;
+  margin-top: 10px;
+}
+
+/* Der Text ist in der Mitte und
+   der Text ist Kursiv. Dieser 
+   DIV-Element soll immer 100%
+   breit sein und eine eigene
+   Zeile ausfüllen.
+*/
+footer .rechtliches {
+  text-align: center;
+  font-style: italic;
+}
+
+/* * * * * * * * * * * * * * * * * *
+ * INHALT
+ * * * * * * * * * * * * * * * * * */
+
+/* Textgröße 12px, Zeilenhöhe 22px,
+  * Schriftart deiner Wahl, Textfluss
+  * mittig */
+main {
+  font-size: 20px;
+  line-height: 30px;
+  font-family: cursive;
+  text-align: center;
+  padding-bottom: 130px;
+}
+
+/* Falls Paragraph notwendig, dann
+  * soll der Paragraph einen blauen
+  * Rahmen haben und einen äußeren
+  * Abstand von 6px */
+main p {
+  border: outset 2px darkred;
+  width: 600px;
+  margin: 6px;
+  padding: 10px;
+  background-color: rgba(135, 8, 8, 0.689);
+}
+
+/* Alle Überschriften haben einen
+  * grünen Hintergrundfarbe und eine
+  * gelbe Textfarbe. Der Test ist 
+  * immer von links nach rechts fließend
+  * (t-align: l...;) */
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  background-color: darkred;
+  color: yellow;
+  text-align: left;
+  padding: 10px;
+}
+main .mainlist {
+  text-shadow: 2px 2px 6px black;
+}
+main .mainimp{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+/* Tabelle hat eine Hintergrundfarbe und
+ * einen Rahmen */
+
+main table {
+  border: outset 2px darkred;
+  background-color: rgba(135, 8, 8, 0.689);
+  margin: 10px;
+}
+main .maintable {
+  display: flex;
+  justify-content: center;
+}
+main div .bildsp {
+  width: 600px;
+  border: outset 10px darkred;
+}
+
+/* Die Tabellenzellen sollen einen
+ * inneren Randabstand von 10px haben und
+ * der text soll von rechts nach links
+ * fließen (t-align: r...;) */
+main table td,
+main table th {
+  padding: 10px;
+  text-align: right;
+}
+
+/* * * * * * * * * * * * * * * * * *
+ * Formularelemente
+ * * * * * * * * * * * * * * * * * */
+
+/* Text wird fließt links nach rechts
+ * (t-align: l...;) und es gibt einen
+ * inneren Randabstand von 5px und einen
+ * Schatten sowie einen Rahmen. */
+
+main form input {
+  text-align: left;
+  padding: 5px;
+  border: outset 2px darkred;
+  box-shadow: 1px 1px 5px black;
+}
+
+/* Soll genauso formatiert werden wie
+ * input, aber der Rahmen soll eine
+ * andere Farbe haben */
+
+main form select {
+  text-align: left;
+  padding: 5px;
+  border: outset 2px red;
+  box-shadow: 1px 1px 5px black;
+}
+
+/* Runde Ecken und ohne Rahmen */
+
+main form button {
+  border-radius: 10px;
+  border: none;
+}
